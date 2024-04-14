@@ -8,11 +8,11 @@
 import Foundation
 
 struct MovieArray: Codable {
-    let movies: [Movie]
+    let products: [Product]
     let total, skip, limit: Int
 }
 
-struct Movie: Codable, Identifiable {
+struct Product: Codable, Identifiable {
     let id: Int
     let title, description: String
     let brand, category: String
@@ -23,8 +23,8 @@ struct Movie: Codable, Identifiable {
         images.first ?? Constants.randomImage
     }
     
-    static var mockMovie: Movie{
-        Movie(
+    static var mockProduct: Product{
+        Product(
             id: 1,
             title: "Example product title",
             description: "Some mock description about this product",
@@ -36,8 +36,8 @@ struct Movie: Codable, Identifiable {
     }
 }
 
-struct ProductRow: Identifiable {
+struct MovieRow: Identifiable {
     let id = UUID().uuidString
     let title: String
-    let products: [Movie]
+    let products: [Product]
 }

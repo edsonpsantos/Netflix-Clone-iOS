@@ -11,19 +11,11 @@ import SwiftfulRouting
 struct ContentView: View {
     @Environment(\.router) var router
     var body: some View {
-        List{
-            Button("Open Netflix UI Clone"){
-                router.showScreen(.fullScreenCover){_ in
-                    HomeView()
-                }
-            }
-        }
+        HomeView()
     }
 }
 
 #Preview {
-    RouterView{ _ in
-        ContentView()
-    }
+    ContentView()
 }
 
