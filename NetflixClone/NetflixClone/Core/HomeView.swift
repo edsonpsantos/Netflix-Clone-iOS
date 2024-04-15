@@ -15,46 +15,17 @@ struct HomeView: View {
     
     @State private var heroMovie: Product? = nil
     @State private var movieRows:[MovieRow] = []
+    @State private var scrollViewOffset: CGFloat = 0
     
     var body: some View {
         ZStack(alignment: .top) {
             Color.netflixBlack.ignoresSafeArea()
             
-            ScrollView(.vertical) {
-                VStack(spacing: 8){
-                    Rectangle()
-                        .opacity(0)
-                        .frame(height: fullHeaderSize.height)
-                    
-                    if let heroMovie {
-                        heroCell(heroMovie: heroMovie)
-                    }
-                    
-                    categoryRows
-                }
-            }
-            .scrollIndicators(.hidden)
+            backgroundGradientLayer
             
-            VStack(spacing: 0){
-                header
-                    .padding(.horizontal, 16)
-                
-                FilterBarView(filters: filter,
-                              selectedFilter: seletedFilter,
-                              onFilterPressed: {
-                    newFilter in
-                    seletedFilter = newFilter
-                    
-                },
-                              onXMarkPressed: {
-                    seletedFilter = nil
-                })
-                .padding(.top, 16)
-            }
-            .background(Color.blue)
-            .readingFrame { frame in
-                fullHeaderSize = frame.size
-            }
+            scrollViewLayer
+
+            fullHeaderWithFilter
         }
         .foregroundColor(.netflixWhite)
         .task {
@@ -74,13 +45,104 @@ struct HomeView: View {
             //Set to garantee that no duplicate brands\rows
             let allBrands = Set(movies.map({ $0.brand }))
             for brand in allBrands {
-                rows.append(MovieRow(title: brand.capitalized, products: movies))
+                rows.append(MovieRow(title: brand.capitalized, products: movies.shuffled()))
             }
             movieRows = rows
         }
         catch{}
     }
     
+    private var backgroundGradientLayer: some View{
+        ZStack{
+            LinearGradient(
+                colors: [
+                    .netflixDarkGray.opacity(1),
+                    .netflixDarkGray.opacity(0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+            
+            LinearGradient(
+                colors: [
+                    .netflixDarkRed.opacity(0.5),
+                    .netflixDarkRed.opacity(0)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+        }
+        .frame(maxHeight: max(10, (400 + (scrollViewOffset * 0.70))))
+        .opacity(scrollViewOffset < -250 ? 0 : 1)
+        .animation(.easeInOut, value: scrollViewOffset)
+    }
+    
+    private var scrollViewLayer: some View{
+        ScrollViewWithOnScrollChanged(
+            .vertical,
+            showsIndicators: false,
+            content: {
+                VStack(spacing: 8){
+                    Rectangle()
+                        .opacity(0)
+                        .frame(height: fullHeaderSize.height)
+                    
+                    if let heroMovie {
+                        heroCell(heroMovie: heroMovie)
+                    }
+                    
+//                    Text("\(scrollViewOffset)").foregroundStyle(.red)
+                    
+                    categoryRows
+                }
+            },
+            onScrollChanged: { offset in
+                scrollViewOffset = min(0, offset.y)
+            }
+        )
+    }
+    
+    private var fullHeaderWithFilter: some View{
+        VStack(spacing: 0){
+            header
+                .padding(.horizontal, 16)
+            
+            if scrollViewOffset > -20 {
+                FilterBarView(filters: filter,
+                              selectedFilter: seletedFilter,
+                              onFilterPressed: {
+                    newFilter in
+                    seletedFilter = newFilter
+                    
+                },
+                  onXMarkPressed: {
+                    seletedFilter = nil
+                })
+                .padding(.top, 16)
+                .transition(.move(edge: .top).combined(with: .opacity))
+            }
+        }
+        .padding(.bottom, 12)
+        .background(
+            ZStack{
+                if scrollViewOffset < -70 {
+                    Rectangle()
+                        .fill(Color.clear)
+                        .background(.ultraThinMaterial)
+                        .brightness(-0.2)
+                        .ignoresSafeArea()
+                }
+            }
+        )
+        .animation(.smooth, value: scrollViewOffset)
+        .readingFrame { frame in
+            if fullHeaderSize == .zero{
+                fullHeaderSize = frame.size
+            }
+        }
+    }
     
     private var header: some View{
         HStack(spacing: 0){
