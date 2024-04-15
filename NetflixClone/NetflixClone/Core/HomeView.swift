@@ -27,29 +27,10 @@ struct HomeView: View {
                         .frame(height: fullHeaderSize.height)
                     
                     if let heroMovie {
-                        HeroCell(
-                            imageName: heroMovie.firstImage,
-                            isFilm: true,
-                            title: heroMovie.title,
-                            categories: [heroMovie.category.capitalized, heroMovie.brand],
-                            onBackgroundPressed: {
-                                
-                            },
-                            onPlayPressed: {
-                                
-                            },
-                            onMyListPressed: {
-                                
-                            }
-                        )
-                        .padding(24)
+                        heroCell(heroMovie: heroMovie)
                     }
                     
-                    ForEach(0..<10) { _ in
-                        Rectangle()
-                            .fill(Color.red)
-                            .frame(height: 200)
-                    }
+                    categoryRows
                 }
             }
             .scrollIndicators(.hidden)
@@ -120,6 +101,52 @@ struct HomeView: View {
             }
             .font(.title2)
         }
+    }
+    
+    private var categoryRows: some View{
+        LazyVStack(spacing: 16){
+            ForEach(Array(movieRows.enumerated()), id: \.offset) { (rowIndex, row) in
+                VStack(alignment:.leading, spacing: 6){
+                    Text(row.title)
+                        .font(.headline)
+                        .padding(.horizontal, 16)
+                    
+                    ScrollView(.horizontal){
+                        LazyHStack {
+                            ForEach(Array(row.products.enumerated()), id: \.offset){ (index, filter) in
+                                MovieCell(
+                                    imageName: filter.firstImage,
+                                    title: filter.title,
+                                    isRecentelyAdded: filter.recentelyAdded,
+                                    topTenRanking: rowIndex == 1 ? (index + 1) : nil
+                                )
+                            }
+                        }
+                        .padding(.horizontal,16)
+                    }
+                    .scrollIndicators(.hidden)
+                }
+            }
+        }
+    }
+    
+    private func heroCell(heroMovie: Product) -> some View {
+        HeroCell(
+            imageName: heroMovie.firstImage,
+            isFilm: true,
+            title: heroMovie.title,
+            categories: [heroMovie.category.capitalized, heroMovie.brand],
+            onBackgroundPressed: {
+                
+            },
+            onPlayPressed: {
+                
+            },
+            onMyListPressed: {
+                
+            }
+        )
+        .padding(24)
     }
 }
 

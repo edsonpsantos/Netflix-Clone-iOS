@@ -24,6 +24,7 @@
 		2DCFC7202BCBEECB00F95F75 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2DCFC71F2BCBEECB00F95F75 /* SDWebImageSwiftUI */; };
 		2DCFC7232BCBF3B500F95F75 /* ButtonStyleViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFC7222BCBF3B500F95F75 /* ButtonStyleViewModifier.swift */; };
 		2DCFC7252BCBF9D000F95F75 /* FrameReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFC7242BCBF9D000F95F75 /* FrameReaderView.swift */; };
+		2DE3CC8A2BCD3B420076E061 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC892BCD3B420076E061 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		2DCFC71C2BCBEE5500F95F75 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		2DCFC7222BCBF3B500F95F75 /* ButtonStyleViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleViewModifier.swift; sourceTree = "<group>"; };
 		2DCFC7242BCBF9D000F95F75 /* FrameReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameReaderView.swift; sourceTree = "<group>"; };
+		2DE3CC892BCD3B420076E061 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				2DCFC7142BCBDA0C00F95F75 /* FilterCell.swift */,
 				2DCFC7162BCBDBD000F95F75 /* FilterBarView.swift */,
 				2DCFC7182BCBDEC500F95F75 /* New Group */,
+				2DE3CC892BCD3B420076E061 /* MovieCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE3CC8A2BCD3B420076E061 /* MovieCell.swift in Sources */,
 				2DCFC70E2BCBD55E00F95F75 /* Constants.swift in Sources */,
 				2DCFC7152BCBDA0C00F95F75 /* FilterCell.swift in Sources */,
 				2DCFC7132BCBD62100F95F75 /* HomeView.swift in Sources */,

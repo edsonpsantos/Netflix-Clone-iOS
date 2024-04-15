@@ -23,6 +23,11 @@ struct Product: Codable, Identifiable {
         images.first ?? Constants.randomImage
     }
     
+//    Random searchvalue
+    let recentelyAdded: Bool = {
+        return Int.random(in: 1...4) == 1
+    }()
+    
     static var mockProduct: Product{
         Product(
             id: 1,
