@@ -30,7 +30,10 @@
 		2DE3CC922BCD678F0076E061 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC912BCD678F0076E061 /* DetailsView.swift */; };
 		2DE3CC942BCD6B1F0076E061 /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC932BCD6B1F0076E061 /* DetailsHeaderView.swift */; };
 		2DE3CC962BCD6C180076E061 /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC952BCD6C180076E061 /* CustomProgressBar.swift */; };
-		2DE3CC982BCD74C30076E061 /* DetailsMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC972BCD74C30076E061 /* DetailsMoviesView.swift */; };
+		2DE3CC982BCD74C30076E061 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC972BCD74C30076E061 /* MovieDetailsView.swift */; };
+		2DE3CC9A2BCD80ED0076E061 /* MyListButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC992BCD80ED0076E061 /* MyListButtons.swift */; };
+		2DE3CC9C2BCD83E90076E061 /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC9B2BCD83E90076E061 /* RateButton.swift */; };
+		2DE3CC9E2BCD8AB40076E061 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +59,10 @@
 		2DE3CC912BCD678F0076E061 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		2DE3CC932BCD6B1F0076E061 /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
 		2DE3CC952BCD6C180076E061 /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
-		2DE3CC972BCD74C30076E061 /* DetailsMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsMoviesView.swift; sourceTree = "<group>"; };
+		2DE3CC972BCD74C30076E061 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		2DE3CC992BCD80ED0076E061 /* MyListButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListButtons.swift; sourceTree = "<group>"; };
+		2DE3CC9B2BCD83E90076E061 /* RateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
+		2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +133,10 @@
 				2DCFC7162BCBDBD000F95F75 /* FilterBarView.swift */,
 				2DE3CC892BCD3B420076E061 /* MovieCell.swift */,
 				2DE3CC932BCD6B1F0076E061 /* DetailsHeaderView.swift */,
-				2DE3CC972BCD74C30076E061 /* DetailsMoviesView.swift */,
+				2DE3CC972BCD74C30076E061 /* MovieDetailsView.swift */,
+				2DE3CC992BCD80ED0076E061 /* MyListButtons.swift */,
+				2DE3CC9B2BCD83E90076E061 /* RateButton.swift */,
+				2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -244,8 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DE3CC942BCD6B1F0076E061 /* DetailsHeaderView.swift in Sources */,
+				2DE3CC9E2BCD8AB40076E061 /* ShareButton.swift in Sources */,
 				2DE3CC8A2BCD3B420076E061 /* MovieCell.swift in Sources */,
-				2DE3CC982BCD74C30076E061 /* DetailsMoviesView.swift in Sources */,
+				2DE3CC982BCD74C30076E061 /* MovieDetailsView.swift in Sources */,
 				2DCFC70E2BCBD55E00F95F75 /* Constants.swift in Sources */,
 				2DE3CC8E2BCD59D40076E061 /* ScrollViewWithOnScrollChanged.swift in Sources */,
 				2DCFC7152BCBDA0C00F95F75 /* FilterCell.swift in Sources */,
@@ -258,11 +268,13 @@
 				2DCFC70A2BCBD4C900F95F75 /* DataBaseHelper.swift in Sources */,
 				2DE3CC962BCD6C180076E061 /* CustomProgressBar.swift in Sources */,
 				2DE3CC902BCD5A210076E061 /* LocationReader.swift in Sources */,
+				2DE3CC9C2BCD83E90076E061 /* RateButton.swift in Sources */,
 				2DCFC7172BCBDBD000F95F75 /* FilterBarView.swift in Sources */,
 				2DCFC6F52BCBD38400F95F75 /* NetflixCloneApp.swift in Sources */,
 				2DE3CC922BCD678F0076E061 /* DetailsView.swift in Sources */,
 				2DCFC71D2BCBEE5500F95F75 /* ImageLoaderView.swift in Sources */,
 				2DCFC7232BCBF3B500F95F75 /* ButtonStyleViewModifier.swift in Sources */,
+				2DE3CC9A2BCD80ED0076E061 /* MyListButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

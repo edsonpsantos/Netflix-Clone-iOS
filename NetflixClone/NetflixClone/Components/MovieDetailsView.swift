@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailsMoviesView: View {
+struct MovieDetailsView: View {
     
     var title: String = "Movie Title"
     var isNew: Bool = true
@@ -138,8 +138,8 @@ struct DetailsMoviesView: View {
         Color.netflixBlack.ignoresSafeArea()
         
         VStack(spacing: 40) {
-            DetailsMoviesView()
-            DetailsMoviesView(
+            MovieDetailsView()
+            MovieDetailsView(
                 isNew: false,
                 yearReleased: nil,
                 seasonCount: nil,

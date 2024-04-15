@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct HomeView: View {
+    
+    @Environment(\.router) var router
     
     @State private var filter = FilterModel.mockArray
     @State private var seletedFilter: FilterModel? = nil
@@ -42,7 +45,7 @@ struct HomeView: View {
             
             var rows: [MovieRow] = []
             
-            //Set to garantee that no duplicate brands\rows
+            //Set to garantee that no duplicate rows
             let allBrands = Set(movies.map({ $0.brand }))
             for brand in allBrands {
                 rows.append(MovieRow(title: brand.capitalized, products: movies.shuffled()))
@@ -51,6 +54,14 @@ struct HomeView: View {
         }
         catch{}
     }
+    
+    
+    private func onMoviePressed(movie: Product){
+        router.showScreen(.sheet){ _ in
+            DetailsView(movie: movie)
+        }
+    }
+    
     
     private var backgroundGradientLayer: some View{
         ZStack{
@@ -149,6 +160,9 @@ struct HomeView: View {
             Text("For You")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.title)
+                .onTapGesture {
+                    router.dismissScreen()
+                }
             
             HStack(spacing: 16){
                 Image(systemName: "tv.badge.wifi")
@@ -182,6 +196,9 @@ struct HomeView: View {
                                     isRecentelyAdded: filter.recentelyAdded,
                                     topTenRanking: rowIndex == 1 ? (index + 1) : nil
                                 )
+                                .onTapGesture {
+                                    onMoviePressed(movie: filter)
+                                }
                             }
                         }
                         .padding(.horizontal,16)
@@ -199,13 +216,13 @@ struct HomeView: View {
             title: heroMovie.title,
             categories: [heroMovie.category.capitalized, heroMovie.brand],
             onBackgroundPressed: {
-                
+                onMoviePressed(movie: heroMovie)
             },
             onPlayPressed: {
-                
+                onMoviePressed(movie: heroMovie)
             },
             onMyListPressed: {
-                
+                onMoviePressed(movie: heroMovie)
             }
         )
         .padding(24)
@@ -213,5 +230,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    RouterView{ _ in
+        HomeView()
+    }
 }
