@@ -10,12 +10,32 @@ import SwiftfulRouting
 
 struct ContentView: View {
     @Environment(\.router) var router
+    
+    var appData: AppData = .init()
+    
     var body: some View {
-        HomeView()
+        ZStack {
+            Color.netflixBlack.ignoresSafeArea()
+            
+            /*
+            First View after SplashScreen is loaded
+            */
+            HomeView()
+                .transition(.move(edge: .top).combined(with: .opacity))
+
+            if !appData.isSplashFinished {
+                SplashScreen()
+            }
+            
+        }
+        .environment(appData)
     }
 }
 
 #Preview {
-    ContentView()
+    ZStack{
+        Color.netflixBlack.ignoresSafeArea()
+        ContentView()
+    }
 }
 

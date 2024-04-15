@@ -21,20 +21,25 @@ struct HomeView: View {
     @State private var scrollViewOffset: CGFloat = 0
     
     var body: some View {
-        ZStack(alignment: .top) {
-            Color.netflixBlack.ignoresSafeArea()
+        VStack {
+            ZStack(alignment: .top) {
+                Color.netflixBlack.ignoresSafeArea()
+                Spacer()
+                backgroundGradientLayer
+                
+                scrollViewLayer
+                
+                fullHeaderWithFilter
+                
+            }
+            .foregroundColor(.netflixWhite)
+            .task {
+                await getMovies()
+            }
+            .toolbar(.hidden, for: .navigationBar)
             
-            backgroundGradientLayer
-            
-            scrollViewLayer
-
-            fullHeaderWithFilter
+            CustomTabBar()
         }
-        .foregroundColor(.netflixWhite)
-        .task {
-            await getMovies()
-        }
-        .toolbar(.hidden, for: .navigationBar)
     }
     
     private func getMovies() async {
@@ -104,7 +109,7 @@ struct HomeView: View {
                         heroCell(heroMovie: heroMovie)
                     }
                     
-//                    Text("\(scrollViewOffset)").foregroundStyle(.red)
+                    //                    Text("\(scrollViewOffset)").foregroundStyle(.red)
                     
                     categoryRows
                 }
@@ -128,7 +133,7 @@ struct HomeView: View {
                     seletedFilter = newFilter
                     
                 },
-                  onXMarkPressed: {
+                              onXMarkPressed: {
                     seletedFilter = nil
                 })
                 .padding(.top, 16)

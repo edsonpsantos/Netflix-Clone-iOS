@@ -34,6 +34,13 @@
 		2DE3CC9A2BCD80ED0076E061 /* MyListButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC992BCD80ED0076E061 /* MyListButtons.swift */; };
 		2DE3CC9C2BCD83E90076E061 /* RateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC9B2BCD83E90076E061 /* RateButton.swift */; };
 		2DE3CC9E2BCD8AB40076E061 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */; };
+		2DE3CCA02BCDB3B90076E061 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CC9F2BCDB3B90076E061 /* SplashScreen.swift */; };
+		2DE3CCA62BCDB5490076E061 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2DE3CCA52BCDB5490076E061 /* Lottie */; };
+		2DE3CCAC2BCDBA7B0076E061 /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DE3CCAB2BCDBA7B0076E061 /* logo.json */; };
+		2DE3CCAF2BCDBB820076E061 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CCAE2BCDBB820076E061 /* AppData.swift */; };
+		2DE3CCB12BCDC0190076E061 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CCB02BCDC0190076E061 /* CustomTabBar.swift */; };
+		2DE3CCB32BCDC0580076E061 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CCB22BCDC0580076E061 /* TabBar.swift */; };
+		2DE3CCB52BCDC3B60076E061 /* NoAminationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE3CCB42BCDC3B60076E061 /* NoAminationButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +70,12 @@
 		2DE3CC992BCD80ED0076E061 /* MyListButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListButtons.swift; sourceTree = "<group>"; };
 		2DE3CC9B2BCD83E90076E061 /* RateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateButton.swift; sourceTree = "<group>"; };
 		2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		2DE3CC9F2BCDB3B90076E061 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		2DE3CCAB2BCDBA7B0076E061 /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
+		2DE3CCAE2BCDBB820076E061 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		2DE3CCB02BCDC0190076E061 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		2DE3CCB22BCDC0580076E061 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		2DE3CCB42BCDC3B60076E061 /* NoAminationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAminationButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +85,7 @@
 			files = (
 				2DCFC7202BCBEECB00F95F75 /* SDWebImageSwiftUI in Frameworks */,
 				2DCFC7082BCBD49B00F95F75 /* SwiftfulRouting in Frameworks */,
+				2DE3CCA62BCDB5490076E061 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +113,10 @@
 			children = (
 				2DCFC6F42BCBD38400F95F75 /* NetflixCloneApp.swift */,
 				2DCFC6F62BCBD38400F95F75 /* ContentView.swift */,
-				2DCFC7022BCBD3DB00F95F75 /* Models */,
 				2DCFC7032BCBD3E100F95F75 /* Components */,
-				2DCFC7042BCBD3F000F95F75 /* Core */,
+				2DCFC7022BCBD3DB00F95F75 /* Models */,
+				2DE3CCAD2BCDBB4B0076E061 /* ViewModel */,
+				2DCFC7042BCBD3F000F95F75 /* View */,
 				2DCFC7052BCBD3F600F95F75 /* Shared */,
 				2DCFC6F82BCBD38500F95F75 /* Assets.xcassets */,
 				2DCFC6FA2BCBD38500F95F75 /* Preview Content */,
@@ -120,6 +135,7 @@
 		2DCFC7022BCBD3DB00F95F75 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2DE3CCB22BCDC0580076E061 /* TabBar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,22 +153,25 @@
 				2DE3CC992BCD80ED0076E061 /* MyListButtons.swift */,
 				2DE3CC9B2BCD83E90076E061 /* RateButton.swift */,
 				2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */,
+				2DE3CCB02BCDC0190076E061 /* CustomTabBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2DCFC7042BCBD3F000F95F75 /* Core */ = {
+		2DCFC7042BCBD3F000F95F75 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				2DCFC7122BCBD62100F95F75 /* HomeView.swift */,
 				2DE3CC912BCD678F0076E061 /* DetailsView.swift */,
+				2DE3CC9F2BCDB3B90076E061 /* SplashScreen.swift */,
 			);
-			path = Core;
+			path = View;
 			sourceTree = "<group>";
 		};
 		2DCFC7052BCBD3F600F95F75 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2DE3CCAB2BCDBA7B0076E061 /* logo.json */,
 				2DCFC7092BCBD4C900F95F75 /* DataBaseHelper.swift */,
 				2DCFC70B2BCBD4FC00F95F75 /* Movie.swift */,
 				2DCFC70D2BCBD55E00F95F75 /* Constants.swift */,
@@ -170,8 +189,17 @@
 				2DE3CC8D2BCD59D40076E061 /* ScrollViewWithOnScrollChanged.swift */,
 				2DE3CC8F2BCD5A210076E061 /* LocationReader.swift */,
 				2DE3CC952BCD6C180076E061 /* CustomProgressBar.swift */,
+				2DE3CCB42BCDC3B60076E061 /* NoAminationButtonStyle.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		2DE3CCAD2BCDBB4B0076E061 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2DE3CCAE2BCDBB820076E061 /* AppData.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +221,7 @@
 			packageProductDependencies = (
 				2DCFC7072BCBD49B00F95F75 /* SwiftfulRouting */,
 				2DCFC71F2BCBEECB00F95F75 /* SDWebImageSwiftUI */,
+				2DE3CCA52BCDB5490076E061 /* Lottie */,
 			);
 			productName = NetflixClone;
 			productReference = 2DCFC6F12BCBD38400F95F75 /* NetflixClone.app */;
@@ -225,6 +254,7 @@
 			packageReferences = (
 				2DCFC7062BCBD49A00F95F75 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
 				2DCFC71E2BCBEECB00F95F75 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				2DE3CCA42BCDB5490076E061 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 2DCFC6F22BCBD38400F95F75 /* Products */;
 			projectDirPath = "";
@@ -241,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCFC6FC2BCBD38500F95F75 /* Preview Assets.xcassets in Resources */,
+				2DE3CCAC2BCDBA7B0076E061 /* logo.json in Resources */,
 				2DCFC6F92BCBD38500F95F75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DE3CCB32BCDC0580076E061 /* TabBar.swift in Sources */,
+				2DE3CCA02BCDB3B90076E061 /* SplashScreen.swift in Sources */,
 				2DE3CC942BCD6B1F0076E061 /* DetailsHeaderView.swift in Sources */,
 				2DE3CC9E2BCD8AB40076E061 /* ShareButton.swift in Sources */,
 				2DE3CC8A2BCD3B420076E061 /* MovieCell.swift in Sources */,
+				2DE3CCAF2BCDBB820076E061 /* AppData.swift in Sources */,
 				2DE3CC982BCD74C30076E061 /* MovieDetailsView.swift in Sources */,
 				2DCFC70E2BCBD55E00F95F75 /* Constants.swift in Sources */,
 				2DE3CC8E2BCD59D40076E061 /* ScrollViewWithOnScrollChanged.swift in Sources */,
@@ -266,9 +300,11 @@
 				2DCFC6F72BCBD38400F95F75 /* ContentView.swift in Sources */,
 				2DCFC7252BCBF9D000F95F75 /* FrameReaderView.swift in Sources */,
 				2DCFC70A2BCBD4C900F95F75 /* DataBaseHelper.swift in Sources */,
+				2DE3CCB12BCDC0190076E061 /* CustomTabBar.swift in Sources */,
 				2DE3CC962BCD6C180076E061 /* CustomProgressBar.swift in Sources */,
 				2DE3CC902BCD5A210076E061 /* LocationReader.swift in Sources */,
 				2DE3CC9C2BCD83E90076E061 /* RateButton.swift in Sources */,
+				2DE3CCB52BCDC3B60076E061 /* NoAminationButtonStyle.swift in Sources */,
 				2DCFC7172BCBDBD000F95F75 /* FilterBarView.swift in Sources */,
 				2DCFC6F52BCBD38400F95F75 /* NetflixCloneApp.swift in Sources */,
 				2DE3CC922BCD678F0076E061 /* DetailsView.swift in Sources */,
@@ -498,6 +534,14 @@
 				version = 2.2.7;
 			};
 		};
+		2DE3CCA42BCDB5490076E061 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 4.4.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +554,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2DCFC71E2BCBEECB00F95F75 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		2DE3CCA52BCDB5490076E061 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DE3CCA42BCDB5490076E061 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct NetflixCloneApp: App {
+    
+    var appData: AppData = AppData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(appData)
         }
     }
 }
