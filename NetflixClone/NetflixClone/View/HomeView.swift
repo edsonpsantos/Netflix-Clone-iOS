@@ -19,12 +19,16 @@ struct HomeView: View {
     @State private var heroMovie: Product? = nil
     @State private var movieRows:[MovieRow] = []
     @State private var scrollViewOffset: CGFloat = 0
+    private var homeViewName: String = Constants.homeViewName
+
     
     var body: some View {
         VStack {
             ZStack(alignment: .top) {
                 Color.netflixBlack.ignoresSafeArea()
+                
                 Spacer()
+                
                 backgroundGradientLayer
                 
                 scrollViewLayer
@@ -39,7 +43,13 @@ struct HomeView: View {
             .toolbar(.hidden, for: .navigationBar)
             
             CustomTabBar()
+                .background{
+                    Rectangle()
+                        .ignoresSafeArea()
+                }
+    
         }
+        .coordinateSpace(.named(homeViewName))
     }
     
     private func getMovies() async {
@@ -237,5 +247,6 @@ struct HomeView: View {
 #Preview {
     RouterView{ _ in
         HomeView()
+            .environment(AppData())
     }
 }

@@ -22,6 +22,20 @@ struct ContentView: View {
             */
             HomeView()
                 .transition(.move(edge: .top).combined(with: .opacity))
+            
+            if appData.showProfileView {
+                Rectangle()
+                    .fill(.netflixBlack)
+                    .ignoresSafeArea()
+                    .transition(.identity)
+            }
+            
+            ZStack{
+                if appData.showProfileView {
+                    ProfileView()
+                }
+            }
+            .animation(.snappy, value: appData.showProfileView)
 
             if !appData.isSplashFinished {
                 SplashScreen()

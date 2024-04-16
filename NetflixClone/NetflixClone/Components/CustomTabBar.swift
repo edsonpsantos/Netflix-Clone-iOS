@@ -12,7 +12,7 @@ struct CustomTabBar: View {
     @Environment(AppData.self) private var appData
     let IconProfile: String = "Profile"
     private var imageName: String = Constants.randomImage
-    
+    private var homeViewName: String = Constants.homeViewName
     
     var body: some View {
         HStack(spacing: 0){
@@ -23,10 +23,20 @@ struct CustomTabBar: View {
                     VStack(spacing: 2){
                         Group{
                             if tab.icon == IconProfile {
-                                ImageLoaderView(urlString: imageName)
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 25, height: 25)
-                                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                                GeometryReader{ geometry in
+                                    let rect = geometry.frame(in: .named(homeViewName))
+                                    
+                                    ImageLoaderView(urlString: imageName)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 25, height: 25)
+                                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                                    
+                                    Color.clear
+                                        .preference(key: RectangleKey.self, value: rect)
+                                        .onPreferenceChange(RectangleKey.self){
+                                            appData.tabProfileRectangle = $0
+                                        }
+                                 }
                                     .frame(width: 35, height: 35)
                             }else {
                                 Image(systemName: tab.icon)
@@ -57,7 +67,7 @@ struct CustomTabBar: View {
             }
         }
         .padding(.bottom, 10)
-        .padding(.top, 5)
+        .padding(.top, 4)
         .background{
             Rectangle()
                 .fill(.ultraThinMaterial)

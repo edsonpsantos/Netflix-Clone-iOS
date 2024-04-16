@@ -10,6 +10,7 @@
 		2DA513092BCE69330025F9D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA513082BCE69330025F9D3 /* Profile.swift */; };
 		2DA5130B2BCE6CCF0025F9D3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5130A2BCE6CCF0025F9D3 /* ProfileView.swift */; };
 		2DA5130D2BCE71390025F9D3 /* RectangleAnchorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5130C2BCE71390025F9D3 /* RectangleAnchorKey.swift */; };
+		2DA5130F2BCE7BC70025F9D3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5130E2BCE7BC70025F9D3 /* ImageLoader.swift */; };
 		2DCFC6F52BCBD38400F95F75 /* NetflixCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFC6F42BCBD38400F95F75 /* NetflixCloneApp.swift */; };
 		2DCFC6F72BCBD38400F95F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFC6F62BCBD38400F95F75 /* ContentView.swift */; };
 		2DCFC6F92BCBD38500F95F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCFC6F82BCBD38500F95F75 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		2DA513082BCE69330025F9D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2DA5130A2BCE6CCF0025F9D3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2DA5130C2BCE71390025F9D3 /* RectangleAnchorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleAnchorKey.swift; sourceTree = "<group>"; };
+		2DA5130E2BCE7BC70025F9D3 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		2DCFC6F12BCBD38400F95F75 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCFC6F42BCBD38400F95F75 /* NetflixCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCloneApp.swift; sourceTree = "<group>"; };
 		2DCFC6F62BCBD38400F95F75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				2DE3CC9B2BCD83E90076E061 /* RateButton.swift */,
 				2DE3CC9D2BCD8AB40076E061 /* ShareButton.swift */,
 				2DE3CCB02BCDC0190076E061 /* CustomTabBar.swift */,
+				2DA5130E2BCE7BC70025F9D3 /* ImageLoader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				2DE3CC942BCD6B1F0076E061 /* DetailsHeaderView.swift in Sources */,
 				2DE3CC9E2BCD8AB40076E061 /* ShareButton.swift in Sources */,
 				2DE3CC8A2BCD3B420076E061 /* MovieCell.swift in Sources */,
+				2DA5130F2BCE7BC70025F9D3 /* ImageLoader.swift in Sources */,
 				2DE3CCAF2BCDBB820076E061 /* AppData.swift in Sources */,
 				2DE3CC982BCD74C30076E061 /* MovieDetailsView.swift in Sources */,
 				2DCFC70E2BCBD55E00F95F75 /* Constants.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 enum TabBar: String, CaseIterable {
     case home = "Home"
-    case new = "New & Hot"
+    case new = "Recentely"
     case account = "My Netflix"
     
     var icon: String {

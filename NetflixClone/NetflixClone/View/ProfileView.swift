@@ -28,7 +28,7 @@ struct ProfileView: View {
             .frame(maxHeight: .infinity)
         }
         .padding(16)
-        .opacity(appData.watchingProfile == nil ? 1 : 0)
+        .opacity(animateToCenter ? 0 : 1)
         .overlayPreferenceValue(RectangleAnchorKey.self) { value in
             AnimationLayerProfileView(value)
         }
@@ -41,8 +41,12 @@ struct ProfileView: View {
             if let profile = appData.watchingProfile,
                let sourceAnchor = anchors[profile.sourceAnchorID], appData.animateProfile {
                 let newRect = geometry[sourceAnchor]
+                let screenRect = geometry.frame(in: .global)
                 
-                let sourcePosition = CGPoint(x: newRect.midX, y: newRect.minY)
+                let mainImagePosition = CGPoint(x: newRect.midX, y: newRect.minY)
+                let centerImagePosition = CGPoint(x: screenRect.width / 2, y: (screenRect.height / 2) - 45)
+                
+                let destinationPosition = CGPoint(x: appData.tabProfileRectangle.minX, y: appData.tabProfileRectangle.midY)
                 
                 //Profile Image view selection with progressView loader
                 ZStack{
@@ -51,11 +55,33 @@ struct ProfileView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: newRect.width, height: newRect.height)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .position(sourcePosition)
+                        .position(destinationPosition)
+                    
+                    ImageLoader()
+                        .frame(width: 45,height: 45)
+                        .offset(y: 80)
+                        .opacity(animateToCenter ? 1 : 0)
+                }
+                .transition(.identity)
+                .task {
+                    guard !animateToCenter else { return }
+                    await animateUser()
                 }
             }
                
         }
+    }
+    
+    func animateUser() async {
+        withAnimation(.bouncy(duration: 0.40)){
+            animateToCenter = true
+        }
+        
+        await loadContents()
+    }
+    
+    func loadContents() async {
+        try? await Task.sleep(for: .seconds(2))
     }
     
     private var headerSection: some View{
@@ -89,14 +115,17 @@ struct ProfileView: View {
     @ViewBuilder
     func ProfileCardView(_ profile: Profile) -> some View{
         VStack(spacing: 8) {
+            let status = profile.id == appData.watchingProfile?.id
             GeometryReader { _ in
                 Image(profile.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 100, height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .opacity(animateToCenter ? 0 : 1)
 
             }
+            .animation(status ? .none : .bouncy(duration: 0.40), value: animateToCenter)
             .frame(width: 100, height: 100)
             .anchorPreference(key: RectangleAnchorKey.self, value: .bounds, transform: { anchor in
                 return [profile.sourceAnchorID: anchor]
@@ -115,10 +144,11 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ZStack {
-        Color.netflixBlack.ignoresSafeArea()
-        
-        ProfileView()
-            .environment(AppData())
-    }
+//    ZStack {
+//        Color.netflixBlack.ignoresSafeArea()
+//        
+//        ProfileView()
+//            .environment(AppData())
+//    }
+    ContentView()
 }

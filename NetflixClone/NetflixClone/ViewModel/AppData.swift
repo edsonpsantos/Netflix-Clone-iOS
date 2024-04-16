@@ -13,6 +13,7 @@ class AppData {
     var activeTab: TabBar = .home
     
     //Profile select property
+    var tabProfileRectangle: CGRect = .zero
     var watchingProfile: Profile?
     var animateProfile: Bool = false
     var showProfileView: Bool = false
