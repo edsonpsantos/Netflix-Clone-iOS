@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA513092BCE69330025F9D3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA513082BCE69330025F9D3 /* Profile.swift */; };
+		2DA5130B2BCE6CCF0025F9D3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5130A2BCE6CCF0025F9D3 /* ProfileView.swift */; };
+		2DA5130D2BCE71390025F9D3 /* RectangleAnchorKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA5130C2BCE71390025F9D3 /* RectangleAnchorKey.swift */; };
 		2DCFC6F52BCBD38400F95F75 /* NetflixCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFC6F42BCBD38400F95F75 /* NetflixCloneApp.swift */; };
 		2DCFC6F72BCBD38400F95F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCFC6F62BCBD38400F95F75 /* ContentView.swift */; };
 		2DCFC6F92BCBD38500F95F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCFC6F82BCBD38500F95F75 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DA513082BCE69330025F9D3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2DA5130A2BCE6CCF0025F9D3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2DA5130C2BCE71390025F9D3 /* RectangleAnchorKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleAnchorKey.swift; sourceTree = "<group>"; };
 		2DCFC6F12BCBD38400F95F75 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCFC6F42BCBD38400F95F75 /* NetflixCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixCloneApp.swift; sourceTree = "<group>"; };
 		2DCFC6F62BCBD38400F95F75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				2DE3CCB22BCDC0580076E061 /* TabBar.swift */,
+				2DA513082BCE69330025F9D3 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,6 +171,7 @@
 				2DCFC7122BCBD62100F95F75 /* HomeView.swift */,
 				2DE3CC912BCD678F0076E061 /* DetailsView.swift */,
 				2DE3CC9F2BCDB3B90076E061 /* SplashScreen.swift */,
+				2DA5130A2BCE6CCF0025F9D3 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 				2DE3CC8F2BCD5A210076E061 /* LocationReader.swift */,
 				2DE3CC952BCD6C180076E061 /* CustomProgressBar.swift */,
 				2DE3CCB42BCDC3B60076E061 /* NoAminationButtonStyle.swift */,
+				2DA5130C2BCE71390025F9D3 /* RectangleAnchorKey.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -285,6 +294,7 @@
 			files = (
 				2DE3CCB32BCDC0580076E061 /* TabBar.swift in Sources */,
 				2DE3CCA02BCDB3B90076E061 /* SplashScreen.swift in Sources */,
+				2DA513092BCE69330025F9D3 /* Profile.swift in Sources */,
 				2DE3CC942BCD6B1F0076E061 /* DetailsHeaderView.swift in Sources */,
 				2DE3CC9E2BCD8AB40076E061 /* ShareButton.swift in Sources */,
 				2DE3CC8A2BCD3B420076E061 /* MovieCell.swift in Sources */,
@@ -293,6 +303,7 @@
 				2DCFC70E2BCBD55E00F95F75 /* Constants.swift in Sources */,
 				2DE3CC8E2BCD59D40076E061 /* ScrollViewWithOnScrollChanged.swift in Sources */,
 				2DCFC7152BCBDA0C00F95F75 /* FilterCell.swift in Sources */,
+				2DA5130D2BCE71390025F9D3 /* RectangleAnchorKey.swift in Sources */,
 				2DCFC7132BCBD62100F95F75 /* HomeView.swift in Sources */,
 				2DCFC70C2BCBD4FC00F95F75 /* Movie.swift in Sources */,
 				2DCFC7102BCBD58300F95F75 /* User.swift in Sources */,
@@ -304,6 +315,7 @@
 				2DE3CC962BCD6C180076E061 /* CustomProgressBar.swift in Sources */,
 				2DE3CC902BCD5A210076E061 /* LocationReader.swift in Sources */,
 				2DE3CC9C2BCD83E90076E061 /* RateButton.swift in Sources */,
+				2DA5130B2BCE6CCF0025F9D3 /* ProfileView.swift in Sources */,
 				2DE3CCB52BCDC3B60076E061 /* NoAminationButtonStyle.swift in Sources */,
 				2DCFC7172BCBDBD000F95F75 /* FilterBarView.swift in Sources */,
 				2DCFC6F52BCBD38400F95F75 /* NetflixCloneApp.swift in Sources */,

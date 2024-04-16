@@ -11,4 +11,9 @@ import SwiftUI
 class AppData {
     var isSplashFinished: Bool = false
     var activeTab: TabBar = .home
+    
+    //Profile select property
+    var watchingProfile: Profile?
+    var animateProfile: Bool = false
+    var showProfileView: Bool = false
 }

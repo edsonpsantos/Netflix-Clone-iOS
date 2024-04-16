@@ -26,7 +26,7 @@ struct CustomTabBar: View {
                                 ImageLoaderView(urlString: imageName)
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 25, height: 25)
-                                    .clipShape(.rect(cornerRadius: 5))
+                                    .clipShape(RoundedRectangle(cornerRadius: 5))
                                     .frame(width: 35, height: 35)
                             }else {
                                 Image(systemName: tab.icon)
