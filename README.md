@@ -5,7 +5,7 @@ This project it's a rebuild of screens from Netflix in SwiftUI. Building reusabl
 The repository contains all code based on an MVVM architecture pattern to organize the files and keep the code as efficient as possible.
 
 
-##  🤔 Technologies and Features I will use:
+##  🤔 Technologies and Features:
 
 ##App External Packages:
 * SwiftfulRouting -> Is a native, declarative framework that enables programmatic navigation in SwiftUI applications.
