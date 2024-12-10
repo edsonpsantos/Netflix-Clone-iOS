@@ -1,7 +1,7 @@
 # Netflix-Clone-iOS
 
 ## 📱 About this project
-This project it's a rebuild of screens from Netflix in SwiftUI. Building reusable components and complex user interfaces. With beautiful animations and user experiences. 
+This project is a rebuild of screens from Netflix in SwiftUI. Building reusable components and complex user interfaces. With beautiful animations and user experiences. 
 The repository contains all code based on an MVVM architecture pattern to organize the files and keep the code as efficient as possible.
 
 
